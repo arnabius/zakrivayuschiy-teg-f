@@ -1,1 +1,29 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --card-content-font-weight: 400;
+  --card-header-font-weight: 700;
+  --main-font: sans-serif;
+  --accent-font: PressStart2P, sans-serif;
+
+  --bg-color: #fff;
+  --accent-color: #000;
+  --bg-inverse-color: #000;
+  --accent-inverse-color: #fff;
+  --bg-image-color: #d3d3d3;
+  --bg-horizontal-start-color: #e7e7e7;
+  --bg-horizontal-finish-color: #1a1a1a;
+  --bg-gradient-start: calc(0.1 * 100vh);
+
+  --heart-sparks-color: red;
+
+  --heart-contour-color: #000;
+  --heart-body-color: red;
+}
+
+@supports (font-variation-settings: normal) {
+  .page {
+      --main-font: Inter, sans-serif;
+  }
+} 
+
+ 
