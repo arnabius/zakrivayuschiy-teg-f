@@ -4,7 +4,8 @@
 
 *,
 *::after,
-*::before {
+*::before,
+button {
   box-sizing: border-box;
 }
 

@@ -25,8 +25,8 @@
   --card-header-font-weight: 785;
   --bg-color: #000;
   --accent-color: #00CC14;
-  --bg-inverse-color: #f92de5;
-  --accent-inverse-color: #fff;
+  --bg-inverse-color: #fff;
+  --accent-inverse-color: #00CC14; /* #f92de5;*/
   --bg-image-color: #000;
   --bg-horizontal-start-color: #007f0c;
   --bg-horizontal-finish-color: #004306;
