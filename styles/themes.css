@@ -5,7 +5,26 @@
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
 
+@media (prefers-color-scheme: dark) {
+  
+  :root {
+    --bg-percent: 0;
+    --card-content-font-weight: 465;
+    --card-header-font-weight: 785;
+    --bg-color: #000;
+    --accent-color: #00CC14;
+    --bg-inverse-color: #fff;
+    --accent-inverse-color: #00CC14; /* #f92de5;*/
+    --bg-image-color: #000;
+    --bg-horizontal-start-color: #007f0c;
+    --bg-horizontal-finish-color: #004306;
+    --bg-gradient-start: 0;
+    --heart-contour-color: #00CC14;
+  }
+}
+
 :root.theme-light {
+  --bg-percent: 0.0001;
   --card-content-font-weight: 400;
   --card-header-font-weight: 700;
   --bg-color: #fff;
@@ -17,10 +36,10 @@
   --bg-horizontal-finish-color: #1a1a1a;
   --bg-gradient-start: calc(0.1 * 100vh);
   --heart-contour-color: #000;
-
 }
 
 :root.theme-dark {
+  --bg-percent: 0;
   --card-content-font-weight: 465;
   --card-header-font-weight: 785;
   --bg-color: #000;
@@ -32,5 +51,4 @@
   --bg-horizontal-finish-color: #004306;
   --bg-gradient-start: 0;
   --heart-contour-color: #00CC14;
-
 }
