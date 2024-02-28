@@ -13,53 +13,25 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
-.theme-menu__button {
-  transition-timing-function: ease;
-  transition-duration: 0.3s;
-  transition-property: opacity;
-}
 
-.theme-menu__button::after {
-  transition-timing-function: ease;
-  transition-duration: 0.3s;
-  transition-property: width;
-}
 
-.button-decor {
-  transition-timing-function: ease;
-  transition-duration: 0.3s;
-  transition-property: box-shadow;
-}
 
-.button-decor::before {
-  width: 0%;
-  transition-duration: 0.5s;
-  transition-property: width;
-  transition-timing-function: ease-in-out;
-}
 
-.button-decor:hover::before {
-  width: 100%;
-}
 
-.theme-menu__button:disabled::before {
-  animation-name: arrow-moving;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-}
+
+
+
+
+
+
 
 @keyframes arrow-moving {
   0% {
     left: -13px;
   }
 
-  50% {
-    left: -17px;
-  }
-
   100% {
-    left: -13px;
+    left: -17px;
   }
 }
 
@@ -67,6 +39,7 @@
 
 
 .contour {
+  transition-duration: 0.3s;
   transition-property: fill;
   transition-timing-function: linear;
 }
@@ -81,6 +54,7 @@
   transition-duration: 0.3s;
   transition-property: fill;
   transition-timing-function: linear;
+  transition-delay: 0.05s;
 }
 
 .like-icon:hover .main-body {
@@ -96,22 +70,46 @@
   transition-timing-function: linear;
 }
 
-.like-icon:active .main-body,
-.like-icon:active .core {
+.like-icon:active .main-body {
   transition-duration: 0.3s;
   transition-property: fill;
   transition-timing-function: linear;
   transition-delay: 0.05s;
 }
 
-.like-icon.is-liked .main-body,
-.like-icon.is-liked .core,
-.like-icon.is-liked .contour {
+.like-icon:active .core {
+  transition-duration: 0.3s;
+  transition-property: fill;
+  transition-timing-function: linear;
+
+}
+
+
+.like-icon.is-liked .main-body {
   transition-duration: 0.3s;
   transition-property: fill;
   transition-timing-function: linear;
   transition-delay: 0.05s;
 }
+
+.like-icon.is-liked .core {
+  transition-duration: 0.3s;
+  transition-property: fill;
+  transition-timing-function: linear;
+}
+
+.like-icon.is-liked .contour {
+  transition-duration: 0.3s;
+  transition-property: fill;
+  transition-timing-function: linear;
+  transition-delay: 0.06s;
+}
+
+
+
+
+
+
 
 
 

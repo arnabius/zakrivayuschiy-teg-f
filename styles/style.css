@@ -108,6 +108,10 @@
   position: relative;
   display: block;
   height: 16px;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+  transition-property: opacity;
+
 }
 
 .theme-menu__button:disabled {
@@ -136,7 +140,13 @@
   position: absolute;
   left: -13px;
   top: -1px;
+  animation-name: arrow-moving;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
+
 
 .theme-menu__button::after {
   content: '';
@@ -144,6 +154,9 @@
   height: 1px;
   background-color: var(--accent-color, #000);
   width: 0%;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+  transition-property: width;
 }
 
 .theme-menu__button:focus-visible::after {
@@ -174,11 +187,18 @@
     'slnt' 0;
   padding: 5px 10px;
   line-height: 21.78px;
+  border-bottom: 2px solid var(--accent-color, #000);
+}
+
+@media screen and (width <= 375px) {
+  .card__header {
+    padding: 4px 10px;
+  }
 }
 
 .image__wrapper {
   position: relative;
-  border-bottom: 3px solid var(--accent-color, #000);
+  border-bottom: 1px solid var(--accent-color, #000);
   height: auto;
 }
 
@@ -244,6 +264,16 @@
     0 -1px var(--bg-color, #fff);
 }
 
+
+@media screen and (width <= 375px) {
+  .image__text {
+    top: 21px;
+    right: 12px;
+  }
+
+
+}
+
 @supports((text-stroke: 1px var(--bg-color, #fff)) 
 or (-webkit-text-stroke: 1px var(--bg-color, #fff))) {
   .image__text {
@@ -281,15 +311,21 @@ or (-webkit-text-stroke: 1px var(--bg-color, #fff))) {
   gap: 8px;
 }
 
-.button__save {
+.button__save__like {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   align-self: center;
+  border: 2px solid var(--accent-color, #000);
+  font-family: var(--accent-font, sans-serif);
+  background-color: var(--bg-color, #000);
+}
+
+.button__save {
   width: 335px;
   height: 55px;
   font-size: 14px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   gap: 12px;
   
 }
@@ -298,24 +334,14 @@ or (-webkit-text-stroke: 1px var(--bg-color, #fff))) {
   width: 130px;
   height: 100%;
   justify-self: center;
-  align-self: center;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.button__save,
-.card__like-button {
-  border: 2px solid var(--accent-color, #000);
-  font-family: var(--accent-font, sans-serif);
-  background-color: var(--bg-color, #000);
 }
 
 .button {
   background-color: var(--bg-color, #fff);
   font-family: var(--accent-font, sans-serif);
   font-size: 14px;
+  cursor: pointer;
 }
 
 .button__text {
@@ -356,13 +382,15 @@ or (-webkit-text-stroke: 1px var(--bg-color, #fff))) {
   justify-content: flex-end;
 }
 
-.button__like-wrapper,
-.button__save-wrapper {
+.button__wrapper {
   isolation: isolate;
 }
 
 .button-decor {
   box-shadow: none; 
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+  transition-property: box-shadow;
 }
 
 .button__save-icon {
@@ -382,14 +410,12 @@ or (-webkit-text-stroke: 1px var(--bg-color, #fff))) {
 
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color, #000);
-  padding: 0;
 }
 
 .button-decor:focus {
   outline: none;
   box-shadow: 2px 2px var(--accent-color, #000);
 }
-
 
 
 .button__save-wrapper {
@@ -438,6 +464,14 @@ or (-webkit-text-stroke: 1px var(--bg-color, #fff))) {
   left: 0;
   top: 0;
   background-color: var(--accent-color, #000);
+  width: 0%;
+  transition-duration: 0.5s;
+  transition-property: width;
+  transition-timing-function: ease-in-out;
+}
+
+.button-decor:hover::before {
+  width: 100%;
 }
 
 .dialog {
@@ -462,7 +496,6 @@ or (-webkit-text-stroke: 1px var(--bg-color, #fff))) {
   align-items: start;
   text-transform: uppercase;
   gap: 29px;
-  
 }
 
 .button__dialog-wrapper {
@@ -486,7 +519,7 @@ or (-webkit-text-stroke: 1px var(--bg-color, #fff))) {
 
 
 .dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.25);
+  background-color: rgb(0 0 0 / 0.75);
 } 
 
 .dialog__icon {
@@ -539,7 +572,7 @@ or (-webkit-text-stroke: 1px var(--bg-color, #fff))) {
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--heart-contour-color, #000);
+  fill: red; 
 }
 
 .sparks {
